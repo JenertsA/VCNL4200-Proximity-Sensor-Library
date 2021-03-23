@@ -94,7 +94,7 @@ void VCNL4200::setPSIT(uint8_t _psITSetting)
     writeToCommand(0x03, _currentSetting);
 }
 
-void VCNL4200::setPSLEDI(uint8_t _psLEDISetting)
+void VCNL4200::setLedCurrent(uint8_t _psLEDISetting)
 {
     _currentSetting = readCommand(0x04);
     _currentSetting = _currentSetting & 0xF8FF;

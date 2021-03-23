@@ -158,7 +158,7 @@ public:
      * Set PS Led current
      * @param psLEDISetting PS_MS (0x04 High byte) 2:0 bits
      */
-    void setPSLEDI(uint8_t psLEDISetting);
+    void setLedCurrent(uint8_t psLEDISetting);
 
     
 
