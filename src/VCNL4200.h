@@ -123,10 +123,16 @@ public:
     void setALSPowerMode(bool alsPowerModeSetting);
 
     /**
-     * Set PS Power Mode
-     * @param psPowerModeSetting PS_CONF1 (0x03 Low byte) 0 bit
+     * Wake sensor form shut down mode
      */
-    void setPSPowerMode(bool psPowerModeSetting);
+    void wake();
+
+    /**
+     * Put sensor in shut down mode
+     */
+    void sleep();
+
+
 
     /**
      * Set PS Reolution

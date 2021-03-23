@@ -46,11 +46,19 @@ bool VCNL4200::begin(bool _resetToDefault)
     return false;
 }
 
-void VCNL4200::setPSPowerMode(bool _psPowerModeSetting)
+void VCNL4200::wake()
 {
     _currentSetting = readCommand(0x03);
     _currentSetting = _currentSetting & 0xFFFE;
-    _currentSetting = _currentSetting | _psPowerModeSetting;
+    _currentSetting = _currentSetting | 0x00;
+    writeToCommand(0x03, _currentSetting);
+}
+
+void VCNL4200::sleep()
+{
+    _currentSetting = readCommand(0x03);
+    _currentSetting = _currentSetting & 0xFFFE;
+    _currentSetting = _currentSetting | 0x01;
     writeToCommand(0x03, _currentSetting);
 }
 
